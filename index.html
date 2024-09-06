@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>no impulse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-blue': '#E6F3FF',
+                        'soft-green': '#E6FFF3',
+                        'soft-red': '#FFE6E6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-soft-blue min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-light text-center text-gray-800 mb-8">no impulse</h1>
+        <form id="impulse-form" class="mb-8 space-y-4">
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full md:w-1/2 lg:w-1/5 px-2 mb-4">
+                    <input type="text" id="item-name" placeholder="Item Name" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/5 px-2 mb-4">
+                    <input type="text" id="store" placeholder="Store" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/5 px-2 mb-4">
+                    <input type="number" id="price" placeholder="Price" step="0.01" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/5 px-2 mb-4">
+                    <input type="url" id="url" placeholder="URL" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/5 px-2 mb-4">
+                    <input type="number" id="timer" placeholder="Timer (days)" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200">
+                </div>
+            </div>
+            <button type="submit" class="w-full bg-soft-green text-gray-800 font-semibold py-2 px-4 rounded-md hover:bg-green-100 transition duration-300">Add Item</button>
+        </form>
+        <div class="overflow-x-auto">
+            <table id="impulse-table" class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item Name</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Store</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">URL</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Timer</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="px-4 py-3 text-right font-medium">Total:</td>
+                        <td id="total-price" class="px-4 py-3 font-medium"></td>
+                        <td colspan="3"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
